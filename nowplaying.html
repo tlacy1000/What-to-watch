@@ -15,29 +15,12 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 ​
-
-  ​<!--nav pane-->
-  ​<header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="moviesuggestion.html">Movie Suggestion</a>
-                <li class="nav-item">
-                    <a class="nav-link" href="nowplaying.html">Now Playing </a>
-                  </li>
-              </li>
-                </ul>
-                </div>
-                </nav>
-        </header>
-  
 ​
 <body>
   
@@ -52,6 +35,26 @@
         <h1 class="display-4">Movie Time</h1>
         <p class="lead">Let's catch a showing!</p>
       </div>
+    </div>
+  </div>
+      ​​<!--nav pane-->
+​<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="moviesuggestion.html">Movie Suggestion</a>
+              <li class="nav-item">
+                  <a class="nav-link" href="nowplaying.html">Now Playing </a>
+                </li>
+            </li>
+              </ul>
+              </div>
+              </nav>
+      </header>
 ​
       <!-- Row of Navigation Dropdown Buttons -->
       <div id="button-container-custom">
@@ -104,29 +107,11 @@
 ​
   <!-- API, JS, and jQuery links -->
 ​
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-    crossorigin=""></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-  <script type="text/javascript" src="javascript.js"></script>
-​
-​
-  </script>
+
 ​
 ​
   <script type="text/javascript">
-​
-    // Here is our psuedo code:
-​
+    // Here is our psuedo code:s
     // Declare the variables
     var movieName = "";
     var genreString = "";
@@ -152,10 +137,8 @@
       thriller: 53,
       war: 10752,
       western: 37,
-    }
-​
+    };
     // Listener to store value from the genre navbar menu - takes genre text and converts it to TMDB code
-​
     $(".genre-item").on("click", function (event) {
       event.preventDefault();
       genreText = $(this).attr("data-genre");
@@ -175,7 +158,6 @@
         console.log(response);
         var MovieCardsArray = response.results.slice(0, 9);
         $("#card-container").empty();
-​
         for (var i = 0; i < MovieCardsArray.length; i++) {
           var card = $(`
             <div class="col-sm-4">
@@ -217,23 +199,17 @@
           `);
           $("#card-container").append(card);
         }
-​
       });
-​
-​
-​
       // console.log(MovieCardsArray[1].title);
       // console.log(MovieCardsArray[1].poster_path);
       // console.log(MovieCardsArray[1].overview);
-​
-​
     });
-​
-​
-​
-​
-​
-  </script>
+</script>
 </body>
 ​
 </html>
+
+
+
+
+
