@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+​
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie Time</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+       
+    <link href="https://fonts.googleapis.com/css?family=Nosifer&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+​
+​
+<body>
+  ​
+  <div class="container" id="main-container" style="background-color: black;">
+    ​
+    <!-- Jumbotron for Title -->
+    ​
+    <div class="jumbotron jumbotron-fluid" style="background-color: black; color: white;">
+      <!-- <i class="fa fa-film" aria-hidden="true"></i> -->
+      <!-- <i class="fa fa-ticket" aria-hidden="true"></i> -->
+      <div class="container">
+        <h1 class="display-4">Movie Time</h1>
+        <p class="lead">Let's catch a showing!</p>
+      </div>
+       </div>
+      </div>
+​
+      <!-- END Jumbotron -->
+  
+​​<!--nav pane-->
+​<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="moviesuggestion.html">Movie Suggestion</a>
+              <li class="nav-item">
+                  <a class="nav-link" href="nowplaying.html">Now Playing </a>
+                </li>
+            </li>
+              </ul>
+              </div>
+              </nav>
+      </header>
+
+​<!--Buttons that populate movie suggestions-->
+ <div class="suggestion" id="middlebttns">
+                    <button type="button" id="suggestBtn" class="btn btn-success btn-lg">Suggest me any movie!</button>
+                </div>
+                <br>
+                <div class= "suggestbygenre" id="middlebttns" >
+                    <button id="SCIFI" type="button" class="btn btn-outline-info scifi">Sci-Fi</button>
+                    <button id="HORROR" type="button" class="btn btn-outline-success bio">Horror</button>
+                    <button id="ADVENTURE" type="button" class="btn btn-outline-primary adv">Adventure</button>
+                    <button id="MYSTERY" type="button" class="btn btn-outline-warning myst">Mystery</button>
+                    <button id="ACTION" type="button" class="btn btn-outline-danger act">Action</button>
+                </div>
+                     <div id="movies" class="row"></div>
+              
+  
+
+
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/randommoviesuggestion.js"></script>
+   
+    
+
+</body>
+
+</html>
