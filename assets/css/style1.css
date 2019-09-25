@@ -11,11 +11,11 @@ body {
 #main-container {
     background-color: black;
     margin: auto 0;
-    padding: 0px;
+    padding: 20px;
 }
 
 #main-container.container {
-    padding: 0px;
+    padding: 20px;
 
 }
 ​
