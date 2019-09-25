@@ -11,11 +11,11 @@ body {
 #main-container {
     background-color: black;
     margin: auto 0;
-    padding: 20px;
+    padding: 0px;
 }
 
 #main-container.container {
-    padding: 8px 20px;
+    padding: 8px 0px;
 
 }
 ​
@@ -63,9 +63,9 @@ body {
     padding: 10px;
 }
 
-.card-deck {
-    height: 900px;
-}
+/* .card-deck {
+    height: 800px;
+} */
 #card-container {
     margin: auto 0px;
     padding: 0px;
@@ -95,12 +95,12 @@ font-family: 'Creepster', cursive;
 /* #img-div {
 
 } */
-.card-body {
+/* .card-body {
     height: 300px;
-}
+} */
 
 img {
-    height: 300px;
+    /* height: 300px; */
     height: 440px;
     width: 100%;
     text-align: center;
@@ -113,4 +113,11 @@ text-align: center;
 
 .list-group-item {
     text-align: center;
+}
+.card-text {
+    height: 200px;
+    width: 100%;
+}
+.btn-danger {
+    margin: 10px;
 }
