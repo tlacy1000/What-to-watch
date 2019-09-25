@@ -1,0 +1,109 @@
+body {
+    /* background-color: black; */
+    margin: auto 0;
+    background-image: url('../images/scarycollage1.jpg');
+    background-repeat: repeat;
+    background-attachment: relative;
+    background-position: right;
+    /* font-family: 'Nosifer', cursive; */
+}
+​
+#main-container {
+    background-color: black;
+    margin: auto 0;
+    padding: 0px;
+}
+
+#main-container.container {
+    padding: 0px;
+
+}
+​
+.jumbotron {
+    position: relative;
+    padding:0 !important;
+    margin-top:70px !important;
+    background-color: black;
+    margin-top: 23px;
+    text-align:center;
+    margin-bottom: 0 !important; 
+    font-family: 'Creepster', cursive;
+  }
+.jumbotron.jumbotron-fluid {
+    margin: auto 0;
+    padding: 25px;
+}
+  h1 {
+    text-align: center;
+  }
+  .lead {
+    text-align: center;
+  }
+
+#navbarSupportedContent.collapse.navbar-collapse {
+    text-align: center;
+    float: none;
+    width: 33%;
+}
+
+#button-container-custom {
+    margin: auto 5px;
+    padding: 5px;
+    text-align: center;
+}
+​
+.btn.btn-danger.dropdown-toggle {
+    padding: 5px;
+    float: none;
+}
+​ {
+    text-align: center;
+}
+​#card-div {
+    padding: 10px;
+}
+.card-deck {
+    height: 900px;
+}
+#card-container {
+    margin: auto 0px;
+    padding: 0px;
+}
+​
+h1 {
+font-family: 'Creepster', cursive;
+color: white;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+    width: 100%;
+    text-align: center;
+   
+
+}
+#navbarSupportedContent {
+    text-align: center;
+}
+.nav-link {
+    text-align: center;
+}
+
+.middlebttns {
+    text-align: center;
+}
+
+main{
+    color:white;
+}
+
+figure2 {
+    float: center;
+    width: 30%;
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
+    text-indent: 0;
+    margin: 0.5em;
+    padding: 0.5em;
+  }
+  /* #img-div {
