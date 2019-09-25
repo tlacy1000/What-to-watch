@@ -52,7 +52,7 @@ $(document).ready(() => {
   
 //below function is triggerin suggestBtn to suggest movie
 function suggestMovie(suggestedMovieID) {
-    axios.get('http://www.omdbapi.com/?i='+suggestedMovieID+'&apikey=b1480198')
+    axios.get('https://www.omdbapi.com/?i='+suggestedMovieID+'&apikey=b1480198')
     .then((response) => {
         console.log(response);
         let movieInfo = response.data;
