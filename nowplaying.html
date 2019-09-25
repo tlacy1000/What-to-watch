@@ -90,8 +90,8 @@
                         <a class="dropdown-item" class="genre-item" data-genre="horror" href="#">Horror</a>
                         <a class="dropdown-item" class="genre-item" data-genre="music" href="#">Music</a>
                         <a class="dropdown-item" class="genre-item" data-genre="mystery" href="#">Mystery</a>
-                        <a class="dropdown-item" data-genre="romance" href="#">Romance</a>
-                        <a class="dropdown-item" data-genre="scienceFiction" href="#">ScienceFiction</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="romance" href="#">Romance</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="scienceFiction" href="#">ScienceFiction</a>
                     </div>
                 </div>
                 ​
@@ -194,40 +194,58 @@
                 for (var i = 0; i < MovieCardsArray.length; i++) {
                     var card = $(`
             <div class="col-sm-4">
-              <br>
-              <div class="card-deck">
-                <div class="card">
-                  <img src="https://image.tmdb.org/t/p/w185/${MovieCardsArray[i].poster_path}" class="card-img-1" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">${MovieCardsArray[i].title}</h5>
-                    <p class="card-text">${MovieCardsArray[i].overview}</p>
-                    
-                    <button class="btn btn-danger" data-target="#theater-map-${i}" data-toggle="modal"> Show Me Theaters! <i
-                        class="fa fa-film" aria-hidden="true"></i>
-                    </button>
-                    
-                    <div class="modal" id="theater-map-${i}" tabindex="-1" role="dialog">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <img src="https://image.tmdb.org/t/p/w185/${MovieCardsArray[i].poster_path}">
-                            <p>Modal body text goes here.</p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                          </div>
+            <br>
+                <div class="card-deck">
+                    <div class="card">
+                        <div id="img-div">
+                            <img src="http://image.tmdb.org/t/p/w185/${MovieCardsArray[i].poster_path}" class="card-img-1" alt="...">
                         </div>
-                      </div>
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <h5 class="card-title" ><strong>${MovieCardsArray[i].title}</strong></h5>
+
+                                
+                                <div class="overflow-auto">
+                                <p class="card-text" id="overview">${MovieCardsArray[i].overview}</p>
+                                </div>
+                                <button class="btn btn-danger" data-target="#theater-map-${i}" data-toggle="modal"> Show Me Theaters! <i
+                                    class="fa fa-film" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="modal" id="theater-map-${i}" tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Theater Name</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <div class="modal-body">
+
+                                    <ul class="list-group">
+                                        <li class="list-group-item">1:00pm</li>
+                                        <li class="list-group-item">2:00pm</li>
+                                        <li class="list-group-item">3:50pm</li>
+                                        <li class="list-group-item">7:20pm</li>
+                                        <li class="list-group-item">9:50pm</li>
+                                    </ul>
+
+
+
+
+                                    <img src="http://image.tmdb.org/t/p/w185/${MovieCardsArray[i].poster_path}">
+                                    <p>Modal body text goes here.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
           `);
                     $("#card-container").append(card);
