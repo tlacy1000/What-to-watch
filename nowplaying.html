@@ -2,164 +2,197 @@
 <html lang="en">
 ​
 ​
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Movie Time</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin="" />
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Time</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </head>
 ​
 ​
+
 <body>
-  
-  <div class="container" id="main-container" style="background-color: black;">
-    
-    <!-- Jumbotron for Title -->
-    
-    <div class="jumbotron jumbotron-fluid" style="background-color: black; color: white;">
-      <!-- <i class="fa fa-film" aria-hidden="true"></i> -->
-      <!-- <i class="fa fa-ticket" aria-hidden="true"></i> -->
-      <div class="container">
-        <h1 class="display-4">Movie Time</h1>
-        <p class="lead">Let's catch a showing!</p>
-      </div>
-    </div>
-  </div>
-      ​​<!--nav pane-->
-​<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="moviesuggestion.html">Movie Suggestion</a>
-              <li class="nav-item">
-                  <a class="nav-link" href="nowplaying.html">Now Playing </a>
-                </li>
-            </li>
-              </ul>
-              </div>
-              </nav>
-      </header>
-​
-      <!-- Row of Navigation Dropdown Buttons -->
-      <div id="button-container-custom">
-        <div class="btn-group" role="group">
-​
-          <div class="btn-group" role="group">
+
+    <div class="container" id="main-container" style="background-color: black;">
+
+        <!-- Jumbotron for Title -->
+
+        <div class="jumbotron jumbotron-fluid" style="background-color: black; color: white;">
+            <!-- <i class="fa fa-film" aria-hidden="true"></i> -->
+            <!-- <i class="fa fa-ticket" aria-hidden="true"></i> -->
+            <div class="container">
+                <h1 class="display-4">Movie Time</h1>
+                <p class="lead">Let's catch a showing!</p>
+            </div>
+
+             
+
+        </div>
+
+        ​​<!--nav pane-->
+        ​<header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Below: Original ul class (Left-Align Setting was class="navbar-nav mr-auto") -->
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="moviesuggestion.html">Movie Suggestion</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nowplaying.html">Now Playing </a>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
+        <!-- Row of Navigation Dropdown Buttons -->
+        <div id="button-container-custom">
+            <div class="btn-group" role="group">
+                ​
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Genre
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" class="genre-item" data-genre="action" href="#">Action</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="adventure" href="#">Adventure</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="animation" href="#">Animation</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="comedy" href="#">Comedy</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="crime" href="#">Crime</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="documentary" href="#">Documentary</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="drama" href="#">Drama</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="family" href="#">Family</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="fantasy" href="#">Fantasy</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="history" href="#">History</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="horror" href="#">Horror</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="music" href="#">Music</a>
+                        <a class="dropdown-item" class="genre-item" data-genre="mystery" href="#">Mystery</a>
+                        <a class="dropdown-item" data-genre="romance" href="#">Romance</a>
+                        <a class="dropdown-item" data-genre="scienceFiction" href="#">ScienceFiction</a>
+                    </div>
+                </div>
+                ​
+
+            ​</div>
+        </div>
+       
+<!-- From other file -->
+        <!-- <div class="btn-group" role="group">
             <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               Genre
             </button>
             <div class="dropdown-menu">
-              <a class="genre-item" data-genre="action" href="#">Action</a>
-              <a class="genre-item" data-genre="adventure" href="#">Adventure</a>
-              <a class="genre-item" data-genre="animation" href="#">Animation</a>
-              <a class="genre-item" data-genre="comedy" href="#">Comedy</a>
-              <a class="genre-item" data-genre="crime" href="#">Crime</a>
-              <a class="genre-item" data-genre="documentary" href="#">Documentary</a>
-              <a class="genre-item" data-genre="drama" href="#">Drama</a>
-              <a class="genre-item" data-genre="family" href="#">Family</a>
-              <a class="genre-item" data-genre="fantasy" href="#">Fantasy</a>
-              <a class="genre-item" data-genre="history" href="#">History</a>
-              <a class="genre-item" data-genre="horror" href="#">Horror</a>
-              <a class="genre-item" data-genre="music" href="#">Music</a>
-              <a class="genre-item" data-genre="mystery" href="#">Mystery</a>
-              <a class="genre-item" data-genre="romance" href="#">Romance</a>
-              <a class="genre-item" data-genre="scienceFiction" href="#">ScienceFiction</a>
+              <a class="dropdown-item" class="genre-item" data-genre="action" id="action-search" href="#">Action</a>
+              <a class="dropdown-item" class="genre-item" data-genre="comedy" href="#">Comedy</a>
+              <a class="dropdown-item" class="genre-item" data-genre="horror" href="#">Horror</a>
             </div>
           </div>
-​
-      
-​
-        </div>
-      </div>
-​
-      <!-- END Jumbotron -->
-    </div>
-​
-​
-    
-    
-    <!--Cards for each movie result-->
-    <!-- First row (we'll only have one row for movie results) -->
-    <div id="card-container" class="row">
-    </div>
-    <!-- End Card Container -->
-​
-    
-  </div>
-  <!-- End Main Div -->
-​
-  <!-- API, JS, and jQuery links -->
-​
 
-​
-​
-  <script type="text/javascript">
-    // Here is our psuedo code:s
-    // Declare the variables
-    var movieName = "";
-    var genreString = "";
-    var genreCode = "";
-    var coordinates = "0";
-    var genresMap = {
-      action: 28,
-      adventure: 12,
-      animation: 16,
-      comedy: 35,
-      crime: 80,
-      documentary: 99,
-      drama: 18,
-      family: 10751,
-      fantasy: 14,
-      history: 36,
-      horror: 27,
-      music: 10402,
-      mystery: 9648,
-      romance: 10749,
-      scienceFiction: 878,
-      tvMovie: 10770,
-      thriller: 53,
-      war: 10752,
-      western: 37,
-    };
-    // Listener to store value from the genre navbar menu - takes genre text and converts it to TMDB code
-    $(".genre-item").on("click", function (event) {
-      event.preventDefault();
-      genreText = $(this).attr("data-genre");
-      console.log(genreText);
-      genreCode = (genresMap[genreText]);
-      console.log(genreCode);
-      //Ajax request to TMDB to get poster, synopsis, and list of movies by genre - var "settings" is the data we pass to Ajax
-      var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://api.themoviedb.org/3/discover/movie?with_genres=" + genreCode + "&year=2019&primary_release_year=2019&include_video=false&include_adult=false&certification_country=usa&sort_by=popularity.desc&language=en-US&api_key=744dd719b5b32b3a98b140c3ec414890",
-        "method": "GET",
-        "headers": {},
-        "data": "{}"
-      };
-      $.ajax(settings).then(function (response) {
-        console.log(response);
-        var MovieCardsArray = response.results.slice(0, 9);
-        $("#card-container").empty();
-        for (var i = 0; i < MovieCardsArray.length; i++) {
-          var card = $(`
+ -->
+
+
+
+        ​  <!--Cards for each movie result-->
+        <!-- First row (we'll only have one row for movie results) -->
+        <div id="card-div">
+            <div id="card-container" class="row">
+            </div>
+        </div>
+        <!-- End Card Container -->
+        
+    </div>
+    ​
+
+    ​
+    ​
+
+
+  
+    ​
+
+
+    <!-- End Main Div -->
+    ​
+    <!-- API, JS, and jQuery links -->
+    ​
+    ​
+    ​
+    ​
+    <script type="text/javascript">
+        // Here is our psuedo code:s
+        // Declare the variables
+        var movieName = "";
+        var genreString = "";
+        var genreCode = "";
+        var coordinates = "0";
+        var genresMap = {
+            action: 28,
+            adventure: 12,
+            animation: 16,
+            comedy: 35,
+            crime: 80,
+            documentary: 99,
+            drama: 18,
+            family: 10751,
+            fantasy: 14,
+            history: 36,
+            horror: 27,
+            music: 10402,
+            mystery: 9648,
+            romance: 10749,
+            scienceFiction: 878,
+            tvMovie: 10770,
+            thriller: 53,
+            war: 10752,
+            western: 37,
+        };
+        // Listener to store value from the genre navbar menu - takes genre text and converts it to TMDB code
+        // Changed jQuery target from genre-item to dropdown item - Joe
+        $(".dropdown-item").on("click", function (event) {
+            event.preventDefault();
+            genreText = $(this).attr("data-genre");
+            console.log(genreText);
+            genreCode = (genresMap[genreText]);
+            console.log(genreCode);
+            //Ajax request to TMDB to get poster, synopsis, and list of movies by genre - var "settings" is the data we pass to Ajax
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://api.themoviedb.org/3/discover/movie?with_genres=" + genreCode + "&year=2019&primary_release_year=2019&include_video=false&include_adult=false&certification_country=usa&sort_by=popularity.desc&language=en-US&api_key=744dd719b5b32b3a98b140c3ec414890",
+                "method": "GET",
+                "headers": {},
+                "data": "{}"
+            };
+            $.ajax(settings).then(function (response) {
+                console.log(response);
+                var MovieCardsArray = response.results.slice(0, 9);
+                $("#card-container").empty();
+                for (var i = 0; i < MovieCardsArray.length; i++) {
+                    var card = $(`
             <div class="col-sm-4">
               <br>
               <div class="card-deck">
@@ -197,19 +230,15 @@
               </div>
             </div>
           `);
-          $("#card-container").append(card);
-        }
-      });
-      // console.log(MovieCardsArray[1].title);
-      // console.log(MovieCardsArray[1].poster_path);
-      // console.log(MovieCardsArray[1].overview);
-    });
-</script>
+                    $("#card-container").append(card);
+                }
+            });
+            // console.log(MovieCardsArray[1].title);
+            // console.log(MovieCardsArray[1].poster_path);
+            // console.log(MovieCardsArray[1].overview);
+        });
+    </script>
 </body>
 ​
+
 </html>
-
-
-
-
-

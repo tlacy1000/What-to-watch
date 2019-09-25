@@ -2,69 +2,89 @@
 <html lang="en">
 ​
 ​
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Movie Time</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin="" />
-       
-    <link href="https://fonts.googleapis.com/css?family=Nosifer&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Time</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </head>
 ​
 ​
+
 <body>
-  ​
-  <div class="container" id="main-container" style="background-color: black;">
+
+    <div class="container" id="main-container" style="background-color: black;">
+
+        <!-- Jumbotron for Title -->
+
+        <div class="jumbotron jumbotron-fluid" style="background-color: black; color: white;">
+            <!-- <i class="fa fa-film" aria-hidden="true"></i> -->
+            <!-- <i class="fa fa-ticket" aria-hidden="true"></i> -->
+            <div class="container">
+                <h1 class="display-4">Movie Time</h1>
+                <p class="lead">Let's catch a showing!</p>
+            </div>
+
+             
+
+        </div>
+
+        ​​<!--nav pane-->
+        ​<header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Below: Original ul class (Left-Align Setting was class="navbar-nav mr-auto") -->
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="moviesuggestion.html">Movie Suggestion</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nowplaying.html">Now Playing </a>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
+
+
+        ​  <!--Cards for each movie result-->
+        <!-- First row (we'll only have one row for movie results) -->
+        <div id="card-div">
+            <div id="card-container" class="row">
+            </div>
+        </div>
+        <!-- End Card Container -->
+        
+    </div>
     ​
-    <!-- Jumbotron for Title -->
+
     ​
-    <div class="jumbotron jumbotron-fluid" style="background-color: black; color: white;">
-      <!-- <i class="fa fa-film" aria-hidden="true"></i> -->
-      <!-- <i class="fa fa-ticket" aria-hidden="true"></i> -->
-      <div class="container">
-        <h1 class="display-4">Movie Time</h1>
-        <p class="lead">Let's catch a showing!</p>
-      </div>
-       </div>
-      </div>
-​
-      <!-- END Jumbotron -->
+    ​
+
+
   
-​<!--nav pane-->
-​<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="moviesuggestion.html">Movie Suggestion</a>
-              <li class="nav-item">
-                  <a class="nav-link" href="nowplaying.html">Now Playing </a>
-                </li>
-            </li>
-              </ul>
-              </div>
-              </nav>
-      </header>
+    ​</body>
 
-
-<body>
-  <container>
-  <main>
-<p>Welcome to What should we watch? A place where you can find what's playing or something good on netflix incase you don't feel like going to the movies. </p>
-</container>
-​</main>
-</body>
-​</body>
 </html>
