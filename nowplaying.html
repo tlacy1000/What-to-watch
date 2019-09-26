@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin="" />
-    <link rel="stylesheet" href="assets/css/style2.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -24,6 +24,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/movietime.js"></script>
 </head>
 ​
 ​
@@ -42,11 +43,12 @@
                 <p class="lead">Let's catch a showing!</p>
             </div>
 
-             
+
 
         </div>
 
-        ​​<!--nav pane-->
+        ​​
+        <!--nav pane-->
         ​<header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -69,193 +71,28 @@
 
         <!-- Row of Navigation Dropdown Buttons -->
         <div id="button-container-custom">
-            <div class="btn-group" role="group">
-                ​
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Genre
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" class="genre-item" data-genre="action" href="#">Action</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="adventure" href="#">Adventure</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="animation" href="#">Animation</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="comedy" href="#">Comedy</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="crime" href="#">Crime</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="documentary" href="#">Documentary</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="drama" href="#">Drama</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="family" href="#">Family</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="fantasy" href="#">Fantasy</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="history" href="#">History</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="horror" href="#">Horror</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="music" href="#">Music</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="mystery" href="#">Mystery</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="romance" href="#">Romance</a>
-                        <a class="dropdown-item" class="genre-item" data-genre="scienceFiction" href="#">ScienceFiction</a>
-                    </div>
-                </div>
-                ​
-
-            ​</div>
-        </div>
-       
-<!-- From other file -->
-        <!-- <div class="btn-group" role="group">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              Genre
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" class="genre-item" data-genre="action" id="action-search" href="#">Action</a>
-              <a class="dropdown-item" class="genre-item" data-genre="comedy" href="#">Comedy</a>
-              <a class="dropdown-item" class="genre-item" data-genre="horror" href="#">Horror</a>
-            </div>
-          </div>
-
- -->
-
-
-
-        ​  <!--Cards for each movie result-->
-        <!-- First row (we'll only have one row for movie results) -->
-        <div id="card-div">
-            <div id="card-container" class="row">
-            </div>
-        </div>
-        <!-- End Card Container -->
-        
-    </div>
-    ​
-
-    ​
-    ​
-
-
-  
-    ​
-
-
-    <!-- End Main Div -->
-    ​
-    <!-- API, JS, and jQuery links -->
-    ​
-    ​
-    ​
-    ​
-    <script type="text/javascript">
-        // Here is our psuedo code:s
-        // Declare the variables
-        var movieName = "";
-        var genreString = "";
-        var genreCode = "";
-        var coordinates = "0";
-        var genresMap = {
-            action: 28,
-            adventure: 12,
-            animation: 16,
-            comedy: 35,
-            crime: 80,
-            documentary: 99,
-            drama: 18,
-            family: 10751,
-            fantasy: 14,
-            history: 36,
-            horror: 27,
-            music: 10402,
-            mystery: 9648,
-            romance: 10749,
-            scienceFiction: 878,
-            tvMovie: 10770,
-            thriller: 53,
-            war: 10752,
-            western: 37,
-        };
-        // Listener to store value from the genre navbar menu - takes genre text and converts it to TMDB code
-        // Changed jQuery target from genre-item to dropdown item - Joe
-        $(".dropdown-item").on("click", function (event) {
-            event.preventDefault();
-            genreText = $(this).attr("data-genre");
-            console.log(genreText);
-            genreCode = (genresMap[genreText]);
-            console.log(genreCode);
-            //Ajax request to TMDB to get poster, synopsis, and list of movies by genre - var "settings" is the data we pass to Ajax
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "https://api.themoviedb.org/3/discover/movie?with_genres=" + genreCode + "&year=2019&primary_release_year=2019&include_video=false&include_adult=false&certification_country=usa&sort_by=popularity.desc&language=en-US&api_key=744dd719b5b32b3a98b140c3ec414890",
-                "method": "GET",
-                "headers": {},
-                "data": "{}"
-            };
-            $.ajax(settings).then(function (response) {
-                console.log(response);
-                var MovieCardsArray = response.results.slice(0, 9);
-                $("#card-container").empty();
-                for (var i = 0; i < MovieCardsArray.length; i++) {
-                    var card = $(`
-            <div class="col-sm-4">
-            <br>
-                <div class="card-deck">
-                    <div class="card">
-                        <div id="img-div">
-                            <img src="http://image.tmdb.org/t/p/w185/${MovieCardsArray[i].poster_path}" class="card-img-1" alt="...">
-                        </div>
-                            <div class="card-body d-flex flex-column align-items-center">
-                                <h5 class="card-title" ><strong>${MovieCardsArray[i].title}</strong></h5>
-
-                                
-                                <div class="overflow-auto">
-                                <p class="card-text" id="overview">${MovieCardsArray[i].overview}</p>
-                                </div>
-                                <button class="btn btn-danger" data-target="#theater-map-${i}" data-toggle="modal"> Show Me Theaters! <i
-                                    class="fa fa-film" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                            
-                            <div class="modal" id="theater-map-${i}" tabindex="-1" role="dialog">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Theater Name</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                <div class="modal-body">
-
-                                    <ul class="list-group">
-                                        <li class="list-group-item">1:00pm</li>
-                                        <li class="list-group-item">2:00pm</li>
-                                        <li class="list-group-item">3:50pm</li>
-                                        <li class="list-group-item">7:20pm</li>
-                                        <li class="list-group-item">9:50pm</li>
-                                    </ul>
-
-
-
-
-                                    <img src="http://image.tmdb.org/t/p/w185/${MovieCardsArray[i].poster_path}">
-                                    <p>Modal body text goes here.</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="dropdown">
+                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Genre
+                </button>
+                <div id="genre-dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    
                 </div>
             </div>
-          `);
-                    $("#card-container").append(card);
-                }
-            });
-            // console.log(MovieCardsArray[1].title);
-            // console.log(MovieCardsArray[1].poster_path);
-            // console.log(MovieCardsArray[1].overview);
-        });
-    </script>
+
+
+            ​
+            <!--Cards for each movie result-->
+
+            <div id="card-container">
+
+            </div>
+            <!-- End Card Container -->
+
+        </div>
+        <!-- End Main Div -->
+
 </body>
 ​
 
